@@ -1,0 +1,77 @@
+# Open RegTech Academy – OPA Lab Sandbox
+# Startet eine vollständige Compliance-as-Code Umgebung
+#
+# Usage:
+#   docker-compose up -d
+#   open http://localhost:8181  (OPA API)
+#   open http://localhost:3000  (Grafana Dashboard)
+#
+# Enthält:
+# - OPA Server mit vorgeladenen Policies
+# - PostgreSQL für Beispiel-Compliance-Daten
+# - Grafana für Compliance-Dashboards
+
+version: '3.8'
+
+services:
+  # ============================================================
+  # OPA – Open Policy Agent
+  # ============================================================
+  opa:
+    image: openpolicyagent/opa:latest
+    container_name: regtech-opa
+    ports:
+      - "8181:8181"
+    command:
+      - "run"
+      - "--server"
+      - "--addr=0.0.0.0:8181"
+      - "--log-level=info"
+      - "/policies"
+    volumes:
+      - ../../compliance-as-code:/policies:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8181/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ============================================================
+  # PostgreSQL – Compliance-Datenbank
+  # ============================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: regtech-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: regtech_lab
+      POSTGRES_USER: regtech
+      POSTGRES_PASSWORD: lab-password-2026
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # ============================================================
+  # Grafana – Compliance Dashboard
+  # ============================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: regtech-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: regtech2026
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  grafana_data:
