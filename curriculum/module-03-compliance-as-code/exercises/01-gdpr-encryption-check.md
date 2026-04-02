@@ -88,13 +88,16 @@ cd labs/lab-opa-sandbox
 docker-compose up -d
 
 # Policy testen
-opa test compliance-as-code/gdpr/ -v
+cd ../..
+opa test compliance-as-code/gdpr/article32 -v
 
 # Policy gegen Input evaluieren
 opa eval -d compliance-as-code/gdpr/article32/ \
-         -i exercises/01-test-input.json \
-         "data.gdpr.article32.encryption"
+         -i curriculum/module-03-compliance-as-code/examples/gdpr-article32-input.json \
+         "data.gdpr.article32.encryption.summary"
 ```
+
+Siehe auch: [Runbook für Modul 3](../runbook.md)
 
 ## KI-Hinweis
 

@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - "codex/**"
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Markdown checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install markdownlint
+        run: npm install --global markdownlint-cli
+
+      - name: Run markdownlint
+        run: markdownlint "**/*.md"
+
+      - name: Check local Markdown links
+        run: python3 scripts/check_markdown_links.py
+
+  rego:
+    name: OPA tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install OPA CLI
+        run: |
+          curl -fsSL -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64_static
+          chmod 755 opa
+          sudo mv opa /usr/local/bin/opa
+          opa version
+
+      - name: Run Rego test suite
+        run: opa test compliance-as-code/... -v

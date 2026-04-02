@@ -11,8 +11,6 @@
 # - PostgreSQL für Beispiel-Compliance-Daten
 # - Grafana für Compliance-Dashboards
 
-version: '3.8'
-
 services:
   # ============================================================
   # OPA – Open Policy Agent
@@ -32,7 +30,8 @@ services:
       - ../../compliance-as-code:/policies:ro
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8181/health"]
+      # The OPA image does not ship wget/curl, so probe the bundled binary.
+      test: ["CMD", "/opa", "version"]
       interval: 10s
       timeout: 5s
       retries: 3

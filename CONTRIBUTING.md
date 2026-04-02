@@ -64,6 +64,20 @@ Gesetzestext → Entscheidungsbaum → Rego-Policy → Tests
 
 Gleicher Workflow, aber ohne Issue-Claim-Pflicht. Fork das Repository und erstelle PRs aus deinem Fork.
 
+### Vor dem Pull Request
+
+Bitte prüfe Änderungen lokal, bevor du einen PR öffnest:
+
+```bash
+# Rego-Policies und Tests prüfen
+opa test compliance-as-code/... -v
+
+# Lokale Markdown-Links prüfen
+python3 scripts/check_markdown_links.py
+```
+
+Markdown-Linting und Rego-Tests laufen zusätzlich automatisch in GitHub Actions.
+
 ## Style Guides
 
 ### Rego-Policies (OPA)

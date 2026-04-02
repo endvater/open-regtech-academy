@@ -73,6 +73,20 @@ Mindestens 6 Testfälle:
 }
 ```
 
+## Starthilfe
+
+```bash
+# Policy testen
+opa test compliance-as-code/dora -v
+
+# Policy gegen Beispiel-Input evaluieren
+opa eval -d compliance-as-code/dora \
+  -i curriculum/module-03-compliance-as-code/examples/dora-article18-input.json \
+  "data.dora.article18.incident_classification.classification"
+```
+
+Siehe auch: [Runbook für Modul 3](../runbook.md)
+
 ## KI-Hinweis
 
 Nutze den KI-Tutor, um:
