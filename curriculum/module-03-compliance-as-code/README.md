@@ -55,10 +55,16 @@ Nach Abschluss dieses Moduls können Teilnehmende:
 2. [Übung 2: DORA – ICT-Incident-Klassifizierung](exercises/02-dora-incident-classification.md) (Intermediate)
 3. [Übung 3: End-to-End Compliance Pipeline](exercises/03-e2e-pipeline.md) (Advanced)
 
+## Runbook & Beispiel-Inputs
+
+- [Runbook für lokale Tests und OPA-Evaluation](runbook.md)
+- [GDPR Art. 32 Beispiel-Input](examples/gdpr-article32-input.json)
+- [DORA Art. 18 Beispiel-Input](examples/dora-article18-input.json)
+
 ## Lab-Umgebung
 
 ```bash
-cd ../../labs/lab-opa-sandbox
+cd labs/lab-opa-sandbox
 docker-compose up -d
 # → OPA Server auf localhost:8181
 # → Test-Datenbank auf localhost:5432

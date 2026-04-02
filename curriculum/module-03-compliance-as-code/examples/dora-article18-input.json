@@ -1,0 +1,14 @@
+{
+  "incident": {
+    "id": "INC-EXAMPLE-001",
+    "description": "Ausfall eines kritischen Zahlungsdienstes nach Infrastrukturstörung",
+    "affected_clients": 12000,
+    "financial_impact_eur": 180000,
+    "downtime_hours": 5,
+    "data_records_compromised": 0,
+    "affected_services": [
+      "payment-processing",
+      "client-authentication"
+    ]
+  }
+}
