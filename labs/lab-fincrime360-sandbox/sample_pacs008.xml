@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>MSG-20260414-0001</MsgId>
+      <CreDtTm>2026-04-14T09:41:00Z</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <SttlmInf>
+        <SttlmMtd>CLRG</SttlmMtd>
+      </SttlmInf>
+    </GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId>
+        <InstrId>INST-4711</InstrId>
+        <EndToEndId>E2E-998877</EndToEndId>
+        <UETR>123e4567-e89b-12d3-a456-426614174000</UETR>
+      </PmtId>
+      <IntrBkSttlmAmt Ccy="EUR">9850.00</IntrBkSttlmAmt>
+      <IntrBkSttlmDt>2026-04-14</IntrBkSttlmDt>
+      <Dbtr>
+        <Nm>Atlas Trading GmbH</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>DE44500105175407324931</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BICFI>DEUTDEFFXXX</BICFI>
+        </FinInstnId>
+      </DbtrAgt>
+      <Cdtr>
+        <Nm>Blue Harbour Consulting Ltd</Nm>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <IBAN>CY17002001280000001200527600</IBAN>
+        </Id>
+      </CdtrAcct>
+      <CdtrAgt>
+        <FinInstnId>
+          <BICFI>BCYPCY2NXXX</BICFI>
+        </FinInstnId>
+      </CdtrAgt>
+      <Purp>
+        <Cd>SUPP</Cd>
+      </Purp>
+      <RmtInf>
+        <Ustrd>Invoice 2026-0414 consulting</Ustrd>
+      </RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

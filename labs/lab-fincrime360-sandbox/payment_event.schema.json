@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-regtech-academy.dev/schemas/payment_event.schema.json",
+  "title": "Canonical Payment Event",
+  "description": "Canonical payment event model for transaction screening, transaction monitoring, and fraud detection use cases.",
+  "type": "object",
+  "required": [
+    "rail",
+    "message_family",
+    "message_type",
+    "payment_ids",
+    "parties",
+    "agents",
+    "amounts",
+    "timing",
+    "status"
+  ],
+  "properties": {
+    "rail": {
+      "type": "string",
+      "enum": [
+        "SWIFT_CBPR_PLUS",
+        "SEPA_SCT",
+        "SEPA_SCT_INST",
+        "T2_RTGS",
+        "TIPS",
+        "INTERNAL",
+        "UNKNOWN"
+      ]
+    },
+    "message_family": {
+      "type": "string",
+      "enum": ["pain", "pacs", "camt", "mt", "unknown"]
+    },
+    "message_type": {
+      "type": "string",
+      "description": "Concrete message identifier, for example pacs.008.001.08 or MT103."
+    },
+    "payment_ids": {
+      "type": "object",
+      "required": ["msg_id"],
+      "properties": {
+        "msg_id": {"type": "string"},
+        "instr_id": {"type": ["string", "null"]},
+        "end_to_end_id": {"type": ["string", "null"]},
+        "uetr": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "parties": {
+      "type": "object",
+      "required": ["debtor", "creditor"],
+      "properties": {
+        "debtor": {"$ref": "#/$defs/party"},
+        "creditor": {"$ref": "#/$defs/party"},
+        "ultimate_debtor": {
+          "anyOf": [{"$ref": "#/$defs/party"}, {"type": "null"}]
+        },
+        "ultimate_creditor": {
+          "anyOf": [{"$ref": "#/$defs/party"}, {"type": "null"}]
+        }
+      },
+      "additionalProperties": false
+    },
+    "agents": {
+      "type": "object",
+      "properties": {
+        "debtor_agent_bic": {"type": ["string", "null"]},
+        "creditor_agent_bic": {"type": ["string", "null"]},
+        "instructing_agent_bic": {"type": ["string", "null"]},
+        "instructed_agent_bic": {"type": ["string", "null"]},
+        "intermediary_agent_bics": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "amounts": {
+      "type": "object",
+      "required": ["interbank_settlement_amount", "currency"],
+      "properties": {
+        "instructed_amount": {"type": ["number", "null"]},
+        "interbank_settlement_amount": {"type": "number"},
+        "currency": {"type": "string", "minLength": 3, "maxLength": 3},
+        "fee_amount": {"type": ["number", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "created_at": {"type": ["string", "null"], "format": "date-time"},
+        "interbank_settlement_date": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "booked_at": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "current_status": {"type": "string"},
+        "status_source_message": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "purpose_code": {"type": ["string", "null"]},
+        "remittance_unstructured": {"type": ["string", "null"]},
+        "channel": {"type": ["string", "null"]},
+        "source_system": {"type": ["string", "null"]},
+        "customer_risk_rating": {"type": ["string", "null"]},
+        "beneficiary_risk_rating": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "risk_hints": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "party": {
+      "type": "object",
+      "properties": {
+        "name": {"type": ["string", "null"]},
+        "iban": {"type": ["string", "null"]},
+        "account_id": {"type": ["string", "null"]},
+        "country": {"type": ["string", "null"]},
+        "lei": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

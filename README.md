@@ -1,7 +1,7 @@
 <p align="center">
   <strong>Open RegTech Engineering Academy</strong><br>
   <em>Open-Source-Zertifizierungsplattform für RegTech Engineers</em><br>
-  <code>v0.1-beta · Modul 3: Compliance-as-Code</code>
+  <code>v0.1-beta · Modul 3 live, Modul 4 Foundations in Arbeit</code>
 </p>
 
 <p align="center">
@@ -31,6 +31,7 @@ Die **Open RegTech Engineering Academy** ist eine community-getriebene, KI-gest�
 | Bereich | Status | Inhalt |
 |---------|--------|--------|
 | **Modul 3: Compliance-as-Code** | ✅ Verfügbar | 4 Lektionen, 3 Übungen, Musterlösung |
+| **Modul 4: Fincrime 360 Foundations** | 🧪 Preview | Payment-Rails-Lektion + erstes Parsing-Lab |
 | **DSGVO-Policy (Art. 32)** | ✅ Verfügbar | OPA/Rego Policy + 8 Tests |
 | **DORA-Policy (Art. 18)** | ✅ Verfügbar | Incident-Klassifizierung (Lehrbeispiel) |
 | **Lab-Umgebung** | ✅ Verfügbar | Docker-Compose (OPA + PostgreSQL + Grafana) |
@@ -49,9 +50,60 @@ Das Zielprogramm umfasst 22 Wochen (berufsbegleitend, 8–12h/Woche):
 | M1 | Regulatorische Landschaft EU/DACH (DORA, MiCAR, AI Act, DSGVO) | 🔜 Geplant |
 | M2 | Data Architecture & RegTech Stack | 🔜 Geplant |
 | **M3** | **Compliance-as-Code (OPA, Rego, Policy Testing)** | **✅ Verfügbar** |
-| M4 | KYC, AML & Transaction Monitoring | 🔜 Geplant |
-| M5 | AI Governance, Audit & Ethics | 🔜 Geplant |
-| M6 | Cybersecurity, Reporting & Capstone | 🔜 Geplant |
+| M4 | Fincrime 360: KYC, AML, Fraud, Sanctions & Payment Rails | 🧪 Foundations |
+| M5 | AI Governance, Audit, Privacy & Open-Source Intelligence | 🔜 Geplant |
+| M6 | Cybersecurity, Regulatory Reporting & Capstone | 🔜 Geplant |
+
+## Fincrime 360 als Curriculum-Linse
+
+Die Academy erweitert den klassischen AML/KYC-Blick schrittweise zu einem
+`Fincrime 360`-Ansatz. Ziel ist nicht, einzelne Disziplinen additiv
+nebeneinanderzustellen, sondern technische, regulatorische und operative
+Perspektiven in einem gemeinsamen Lernmodell zu verbinden.
+
+### Die sechs Perspektiven
+
+Jedes groessere Fincrime-Szenario soll kuenftig aus sechs Blickwinkeln
+bearbeitet werden:
+
+1. **Regulatorische Perspektive**  
+   Was verlangen AMLR, DSGVO, DORA, Sanktionen, MiCAR oder lokale Vorgaben?
+2. **Technische Perspektive**  
+   Wie werden Daten, Regeln, Modelle, APIs und Workflows implementiert?
+3. **Law-Enforcement-Perspektive**  
+   Welche Daten- und Berichtsqualitaet brauchen FIU, Ermittler und Aufsicht?
+4. **Wirtschaftliche Perspektive**  
+   Welche Kosten verursachen False Positives, Friktion, Verzugs- oder
+   Liquiditaetsschaeden?
+5. **Forensische Perspektive**  
+   Wie entsteht aus Alerts, Beziehungen und Ereignissen ein belastbares Fallbild?
+6. **Governance-Perspektive**  
+   Welche Kontrollen, Verantwortlichkeiten, Audit Trails und kulturellen
+   Voraussetzungen machen das System tragfaehig?
+
+### Fehlende, aber zentrale Deep-Dive-Dimensionen
+
+Neben den "Klassikern" `KYC`, `AML`, `Fraud` und `Sanctions` adressiert die
+Academy kuenftig auch die Perspektiven, die in der Praxis oft die groessten
+Architekturprobleme verursachen:
+
+- **Data Privacy vs. Fincrime**  
+  DSGVO, Bankgeheimnis, Datenminimierung, Privacy Enhancing Technologies,
+  Federated Learning und verschluesseltes Rechnen
+- **Web3 und On-Chain Fincrime**  
+  Wallet-Tracing, Bridges, Mixer, DEX-Kontext und Off-Ramp-Risiken
+- **OSINT und Adverse Media**  
+  Transparenzregister, UBO-Kontext, externe Signale, NLP-gestuetzte
+  Negativmeldungen
+- **Internal Fraud und ABC**  
+  Mitarbeiterzugriffe, Segregation of Duties, Maker-Checker-Umgehungen,
+  Anti-Bribery-and-Corruption-Kontrollen
+- **Regulatory Reporting**  
+  SAR/STR-Erstellung, Narrative aus strukturierten Daten, Qualitaet und
+  Vollstaendigkeit von Behoerdenmeldungen
+
+Diese Deep Dives sollen nicht als Randthemen laufen, sondern als integraler
+Bestandteil von `M4`, `M5` und `M6`.
 
 ## Module 3
 
@@ -74,6 +126,21 @@ Modul 3 ist die erste vollständige Lerneinheit und das Herzstück des MVP.
 
 - [`compliance-as-code/gdpr/article32/`](compliance-as-code/gdpr/article32/) – DSGVO Verschlüsselungsprüfung (Policy + Tests)
 - [`compliance-as-code/dora/`](compliance-as-code/dora/) – DORA Incident-Klassifizierung
+
+## Modul 4 Preview
+
+`Modul 4` befindet sich noch im Aufbau. Die ersten Foundations sind bereits als
+offener Preview im Repository angelegt:
+
+### Lernartefakte
+
+1. [Modul 4: Fincrime 360](curriculum/module-04-fincrime-360/README.md)
+2. [Lektion 1: Payment Rails for Compliance Engineers](curriculum/module-04-fincrime-360/lessons/01-payment-rails-for-compliance-engineers.md)
+3. [Lektion 2: Missing Perspectives & Deep Dives](curriculum/module-04-fincrime-360/lessons/02-missing-perspectives-and-deep-dives.md)
+
+### Lab
+
+- [`labs/lab-fincrime360-sandbox/`](labs/lab-fincrime360-sandbox/) – Parsing einer vereinfachten `pacs.008` in ein kanonisches Payment-Event
 
 ## Getting Started
 
@@ -118,15 +185,18 @@ cat ai-prompts/module-03-compliance-tutor.md
 ```
 open-regtech-academy/
 ├── curriculum/
-│   └── module-03-compliance-as-code/  # ✅ Verfügbar
-│       ├── lessons/       (4 Lektionen)
-│       ├── exercises/     (3 Übungen)
-│       └── solutions/     (Musterlösungen)
+│   ├── module-03-compliance-as-code/  # ✅ Verfügbar
+│   │   ├── lessons/       (4 Lektionen)
+│   │   ├── exercises/     (3 Übungen)
+│   │   └── solutions/     (Musterlösungen)
+│   └── module-04-fincrime-360/        # 🧪 Foundations / Preview
+│       └── lessons/       (erste Lektionen)
 ├── compliance-as-code/
 │   ├── gdpr/article32/    # ✅ Policy + Tests
 │   └── dora/              # ✅ Incident-Klassifizierung
 ├── labs/
-│   └── lab-opa-sandbox/   # ✅ Docker-Compose
+│   ├── lab-opa-sandbox/         # ✅ Docker-Compose
+│   └── lab-fincrime360-sandbox/ # 🧪 Payment Rails Parsing
 ├── ai-prompts/            # ✅ LLM System Prompts
 ├── synthetic-data/        # 🔜 In Entwicklung
 └── .github/               # ✅ Issue Templates, CI/CD
@@ -140,6 +210,7 @@ Besonders gesucht:
 - **OPA-Policies** für weitere DSGVO-Artikel, DORA-Anforderungen, EU AI Act
 - **Curriculum-Beiträge** für Module 1–2 und 4–6
 - **Lab-Verbesserungen** und neue Testdaten
+- **Fincrime-360-Szenarien** zu Privacy, Web3, OSINT, Internal Fraud und SAR/STR-Automatisierung
 - **Reviews** der bestehenden Policies durch Compliance-Experten
 
 ## Roadmap
@@ -147,9 +218,9 @@ Besonders gesucht:
 | Phase | Zeitrahmen | Inhalt |
 |-------|-----------|--------|
 | **v0.1 (jetzt)** | — | Modul 3 komplett, Lab, CI/CD, DSGVO+DORA-Policies |
-| v0.2 | +2 Monate | Module 1 (Regulatorik) + 2 (Architektur), Dual-Track Onboarding |
-| v0.3 | +4 Monate | Module 4 (KYC/AML) + 5 (AI Governance), Synthetische Datengeneratoren |
-| v1.0 | +6 Monate | Alle 6 Module, Zertifizierungsprüfung, erste Kohorte |
+| v0.2 | +2 Monate | Module 1 (Regulatorik) + 2 (Architektur), Dual-Track Onboarding, Payment-Rails-Basics |
+| v0.3 | +4 Monate | Modul 4 (Fincrime 360), Synthetische Datengeneratoren, erste Deep Dives zu Privacy/Web3/OSINT |
+| v1.0 | +6 Monate | Alle 6 Module, Zertifizierungsprüfung, Regulatory Reporting, erste Kohorte |
 
 Langfristige Vision: Community Hub, Corporate Labs, Continuous Certification. Das vollständige Gesamtkonzept (Studienplan, Geschäftsmodell, Academy-Vision) wird separat gepflegt.
 
