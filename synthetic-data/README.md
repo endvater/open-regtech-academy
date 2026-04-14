@@ -14,6 +14,9 @@ Dieses Verzeichnis wird Python-basierte Generatoren für synthetische Testdaten 
 
 - [`incident-generator/`](incident-generator/) - CLI-Generator fuer synthetische
   DORA-nahe ICT-Incidents mit `minor` und `major` Faellen
+- [`fincrime-360/`](fincrime-360/) - synthetischer Referenzfall fuer
+  `M4`, inklusive Parteien, Zahlungen, Alerts, OSINT-Signalen und
+  Beziehungskanten
 
 ## Beitragen
 

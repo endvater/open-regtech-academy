@@ -1,8 +1,8 @@
 # Modul 4: Fincrime 360
 
-> **Wochen 12–15** · 4 Wochen · ca. 8–12h/Woche
-> **Brückenmodul** zwischen Regulatorik, Zahlungsverkehr, Detection Engineering
-> und Investigation
+> **Wochen 12-15** · 4 Wochen · ca. 8-12h/Woche
+> **Brueckenmodul** zwischen Regulatorik, Zahlungsverkehr, Detection
+> Engineering und Investigation
 
 ## Warum dieses Modul existiert
 
@@ -24,18 +24,45 @@ Nach Abschluss dieses Moduls koennen Teilnehmende:
 
 1. Zahlungsverkehr, KYC-, Fraud- und AML-Signale in einem gemeinsamen Modell
    denken
-2. den Unterschied zwischen `Transaction Screening`, `Transaction Monitoring`
-   und `Fraud Detection` architektonisch erklaeren
-3. Payment-Nachrichten in ein kanonisches Eventmodell ueberfuehren
-4. fehlende Perspektiven wie `Privacy`, `Web3`, `OSINT`, `Internal Fraud` und
-   `Regulatory Reporting` technisch einordnen
+2. den Unterschied zwischen `transaction screening`, `transaction monitoring`
+   und `fraud detection` architektonisch erklaeren
+3. Payment-Nachrichten und KYC-Signale in ein kanonisches Event- und
+   Fallmodell ueberfuehren
+4. Netzwerk-, Governance- und Investigator-Perspektiven in einem gemeinsamen
+   Fallbild verbinden
 5. Fincrime-Loesungen nicht nur nach Detection-Logik, sondern auch nach
    Betriebsfaehigkeit, Governance und Nutzwert fuer Ermittler bewerten
 
+## Modulstruktur
+
+### Woche 12: Rails, Customer and Risk
+
+- Payment Rails und ISO 20022
+- Kunde, Gegenpartei, UBO und Risk Context
+- Referenzfall und erste Feldmappings
+
+### Woche 13: Alerts, Typologies and Boundaries
+
+- Unterschiede zwischen Screening, Monitoring und Fraud
+- Typologien und Kontrollpunkte
+- Alert-Design und False-Positive-Druck
+
+### Woche 14: Investigation and Networks
+
+- Triage, Case Building und Eskalation
+- Netzwerk- und Beziehungssicht
+- Analysten- und Reviewer-Pfade
+
+### Woche 15: Governance and Operating Model
+
+- Governance, Audit und Model Risk
+- Betriebsmodell und Vendor-Evaluierung
+- Bruecke zu `M5` und `M6`
+
 ## Die sechs Perspektiven
 
-Jede groessere Lektion oder Uebung in diesem Modul soll kuenftig sechs
-Perspektiven adressieren:
+Jede groessere Lektion oder Uebung in diesem Modul soll sechs Perspektiven
+adressieren:
 
 1. **Regulatorisch**  
    Welche Pflichten, Grenzen und Definitionsfragen gelten?
@@ -53,100 +80,57 @@ Perspektiven adressieren:
    Wer entscheidet was, wie werden Regeln gepflegt und wie bleibt das System
    auditierbar?
 
-## Geplante Struktur
-
-### Foundations
+## Lektionen
 
 1. [Payment Rails for Compliance Engineers](lessons/01-payment-rails-for-compliance-engineers.md)
 2. [Missing Perspectives & Deep Dives](lessons/02-missing-perspectives-and-deep-dives.md)
+3. [Customer, UBO and Risk](lessons/03-customer-ubo-and-risk.md)
+4. [Transactions, Alerts and Typologies](lessons/04-transactions-alerts-and-typologies.md)
+5. [Investigations and Escalation](lessons/05-investigations-and-escalation.md)
+6. [Network Analysis and Graph Thinking](lessons/06-network-analysis-and-graph-thinking.md)
+7. [Governance, Audit and Model Risk](lessons/07-governance-audit-and-model-risk.md)
+8. [Fincrime Operating Model and Vendor Evaluation](lessons/08-fincrime-operating-model-and-vendor-evaluation.md)
 
-### Geplante weitere Lektionen
+## Uebungen
 
-3. `Customer, UBO & Risk`
-4. `Transactions, Alerts & Typologies`
-5. `Investigations & Escalation`
-6. `Network Analysis & Graph Thinking`
-7. `Governance, Audit & Model Risk`
-8. `SAR/STR Reporting from Structured Data`
+1. [Customer and UBO Risk Mapping](exercises/01-customer-and-ubo-risk-mapping.md)
+2. [Screening, Monitoring and Fraud Boundary Map](exercises/02-screening-monitoring-and-fraud-boundary-map.md)
+3. [Alert to Case Narrative](exercises/03-alert-to-case-narrative.md)
+4. [Network and Typology Review](exercises/04-network-and-typology-review.md)
 
-## Deep-Dive-Tracks
+## Referenzfall und Daten
 
-Die folgenden Bereiche gelten als Pflichtdimensionen des `Fincrime 360`-Ansatzes:
+Dieses Modul arbeitet mit einem synthetischen Referenzfall:
 
-### 1. Data Privacy vs. Fincrime
+- [Synthetic Fincrime 360 Reference Case](../../synthetic-data/fincrime-360/README.md)
 
-Wie lassen sich Muster ueber Silos, Jurisdiktionen oder Institute hinweg
-erkennen, ohne Rohdaten unkontrolliert zusammenzufuehren?
+Der Referenzfall verbindet:
 
-Beispielthemen:
-
-- Zweckbindung und Datenminimierung
-- Privacy Enhancing Technologies
-- Federated Learning
-- verschluesseltes Rechnen
-- Trennung von Trainings-, Ermittlungs- und Auditdaten
-
-### 2. Web3 und On-Chain Fincrime
-
-Wie werden Blockchain-, Wallet- und Off-Ramp-Daten in klassische AML- und
-Fraud-Workflows eingebunden?
-
-Beispielthemen:
-
-- Wallet-Cluster
-- Bridges und Mixer
-- DEX-Kontext
-- VASP-Schnittstellen
-- Krypto-zu-Fiat-Off-Ramps
-
-### 3. OSINT und Adverse Media
-
-Wie werden externe, oft unstrukturierte Daten als Risiko- und Kontextsignale
-nutzbar?
-
-Beispielthemen:
-
-- Transparenzregister
-- UBO-Kontext
-- adverse media
-- Entity Resolution
-- Quellenbewertung und Datenqualitaet
-
-### 4. Internal Fraud und ABC
-
-Wie ueberwacht man nicht nur Zahlungen, sondern auch die Systeme und
-Mitarbeiterhandlungen, die Zahlungen moeglich machen?
-
-Beispielthemen:
-
-- Segregation of Duties
-- Maker-Checker-Kontrollen
-- auffaellige Zugriffe
-- PEP-bezogene Mitarbeiteraktivitaeten
-- Anti-Bribery-and-Corruption-Muster
-
-### 5. Regulatory Reporting
-
-Wie werden aus strukturierten Signalen belastbare, vollstaendige und
-zeitgerechte Behoerdenmeldungen?
-
-Beispielthemen:
-
-- SAR/STR-Narrative
-- Feldmapping fuer Meldungen
-- Qualitaet von Verdachtsmeldungen
-- LLM-Assistenz fuer Entwuerfe
-- Human-in-the-loop-Freigaben
+- Kunden- und UBO-Kontext
+- mehrere Zahlungen
+- Alerts und OSINT-Signale
+- Beziehungskanten fuer Netzwerkanalyse
 
 ## Lab-Komponente
 
-Das erste technische Lab fuer dieses Modul liegt unter:
+Das technische Einstiegslab fuer dieses Modul liegt unter:
 
-- [`../../labs/lab-fincrime360-sandbox/`](../../labs/lab-fincrime360-sandbox/)
+- [Lab: Payment Rails Mapping](../../labs/lab-fincrime360-sandbox/README.md)
 
 Es fuehrt in die Uebersetzung einer vereinfachten `pacs.008` in ein
 kanonisches Payment-Event ein und bildet die Grundlage fuer spaetere Screening-,
 Monitoring- und Fraud-Uebungen.
+
+## Deep-Dive-Tracks
+
+Die folgenden Bereiche gelten als Pflichtdimensionen des `fincrime 360`-
+Ansatzes und verknuepfen `M4` mit `M5` und `M6`:
+
+- `data privacy vs. fincrime`
+- `web3 und on-chain fincrime`
+- `osint und adverse media`
+- `internal fraud und abc`
+- `regulatory reporting`
 
 ## Dual-Track-Nutzung
 

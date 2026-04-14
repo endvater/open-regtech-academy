@@ -8,6 +8,8 @@ kanonisches internes Zahlungsmodell ueberfuehrt werden kann.
 - `sample_pacs008.xml` - vereinfachte Beispielnachricht
 - `payment_event.schema.json` - Zielschema fuer das kanonische Event
 - `parse_pacs008.py` - einfacher Parser ohne Fremdbibliotheken
+- `../../synthetic-data/fincrime-360/reference_case_bundle.json` - passender
+  Referenzfall fuer spaetere M4-Uebungen
 
 ## Schnellstart
 
@@ -28,3 +30,5 @@ python3 parse_pacs008.py sample_pacs008.xml
 2. Parse zusaetzlich eine `pacs.002`-Statusnachricht.
 3. Fuege einen simplen Screening-Schritt auf Basis des Debtor- und
    Creditor-Namens hinzu.
+4. Verknuepfe das geparste Event mit dem `reference_case_bundle.json`, um aus
+   Nachricht, Alert und Fallkontext ein erstes Investigation-Bild zu bauen.

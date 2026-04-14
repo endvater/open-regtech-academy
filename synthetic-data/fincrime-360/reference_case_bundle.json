@@ -1,0 +1,171 @@
+{
+  "scenario_id": "fincrime360_case_001",
+  "scenario_name": "Atlas Trading Reference Case",
+  "summary": "Synthetic cross-border case with customer, counterparty, UBO, OSINT, payment and alert context for M4 exercises.",
+  "parties": [
+    {
+      "party_id": "pty_customer_001",
+      "party_type": "organization",
+      "name": "Atlas Trading GmbH",
+      "country": "DE",
+      "role": "customer",
+      "industry": "industrial equipment brokerage"
+    },
+    {
+      "party_id": "pty_counterparty_001",
+      "party_type": "organization",
+      "name": "Blue Harbour Consulting Ltd",
+      "country": "CY",
+      "role": "counterparty",
+      "industry": "consulting services"
+    },
+    {
+      "party_id": "pty_counterparty_002",
+      "party_type": "organization",
+      "name": "Baltic Components OU",
+      "country": "EE",
+      "role": "counterparty",
+      "industry": "trade intermediary"
+    },
+    {
+      "party_id": "pty_ubo_001",
+      "party_type": "person",
+      "name": "Nikos Petrou",
+      "country": "CY",
+      "role": "ubo"
+    },
+    {
+      "party_id": "pty_director_001",
+      "party_type": "person",
+      "name": "Lara Stein",
+      "country": "DE",
+      "role": "director"
+    }
+  ],
+  "relationships": [
+    {
+      "from_party_id": "pty_director_001",
+      "to_party_id": "pty_customer_001",
+      "relationship_type": "manages"
+    },
+    {
+      "from_party_id": "pty_ubo_001",
+      "to_party_id": "pty_counterparty_001",
+      "relationship_type": "beneficial_owner"
+    },
+    {
+      "from_party_id": "pty_ubo_001",
+      "to_party_id": "pty_counterparty_002",
+      "relationship_type": "beneficial_owner"
+    },
+    {
+      "from_party_id": "pty_customer_001",
+      "to_party_id": "pty_counterparty_001",
+      "relationship_type": "transacts_with"
+    },
+    {
+      "from_party_id": "pty_customer_001",
+      "to_party_id": "pty_counterparty_002",
+      "relationship_type": "transacts_with"
+    }
+  ],
+  "accounts": [
+    {
+      "account_id": "acc_customer_001",
+      "party_id": "pty_customer_001",
+      "iban": "DE44500105175407324931",
+      "currency": "EUR"
+    },
+    {
+      "account_id": "acc_counterparty_001",
+      "party_id": "pty_counterparty_001",
+      "iban": "CY17002001280000001200527600",
+      "currency": "EUR"
+    },
+    {
+      "account_id": "acc_counterparty_002",
+      "party_id": "pty_counterparty_002",
+      "iban": "EE471000001020145685",
+      "currency": "EUR"
+    }
+  ],
+  "payments": [
+    {
+      "payment_id": "pay_001",
+      "message_type": "pacs.008",
+      "debtor_account_id": "acc_customer_001",
+      "creditor_account_id": "acc_counterparty_001",
+      "amount": 9850.0,
+      "currency": "EUR",
+      "booking_date": "2026-04-14",
+      "purpose_code": "SUPP",
+      "remittance": "Invoice 2026-0414 consulting"
+    },
+    {
+      "payment_id": "pay_002",
+      "message_type": "pacs.008",
+      "debtor_account_id": "acc_customer_001",
+      "creditor_account_id": "acc_counterparty_002",
+      "amount": 9900.0,
+      "currency": "EUR",
+      "booking_date": "2026-04-18",
+      "purpose_code": "SUPP",
+      "remittance": "Invoice 2026-0418 logistics support"
+    },
+    {
+      "payment_id": "pay_003",
+      "message_type": "pacs.008",
+      "debtor_account_id": "acc_customer_001",
+      "creditor_account_id": "acc_counterparty_001",
+      "amount": 9950.0,
+      "currency": "EUR",
+      "booking_date": "2026-04-22",
+      "purpose_code": "SUPP",
+      "remittance": "Invoice 2026-0422 advisory"
+    }
+  ],
+  "alerts": [
+    {
+      "alert_id": "alt_tm_001",
+      "alert_type": "transaction_monitoring",
+      "severity": "medium",
+      "linked_payment_ids": [
+        "pay_001",
+        "pay_002",
+        "pay_003"
+      ],
+      "reason": "Repeated round-value cross-border transfers to counterparties linked by the same beneficial owner."
+    },
+    {
+      "alert_id": "alt_osint_001",
+      "alert_type": "osint_context",
+      "severity": "medium",
+      "linked_party_ids": [
+        "pty_ubo_001"
+      ],
+      "reason": "Synthetic adverse-media signal on beneficial owner related to customs fraud investigation coverage."
+    }
+  ],
+  "osint_hits": [
+    {
+      "hit_id": "osint_001",
+      "linked_party_id": "pty_ubo_001",
+      "source_type": "news_summary",
+      "freshness": "recent",
+      "risk_tag": "trade_based_money_laundering",
+      "note": "Synthetic media hit alleging involvement in invoice inflation and customs fraud networks."
+    }
+  ],
+  "case_hints": {
+    "initial_hypotheses": [
+      "Potential structuring below internal manual review threshold.",
+      "Potential use of counterparties with shared beneficial ownership.",
+      "Potential mismatch between customer profile and stated consulting services."
+    ],
+    "open_questions": [
+      "Is there supporting documentation for the consulting and logistics services?",
+      "How does the customer's historic activity compare with these counterparties?",
+      "Are additional counterparties linked to the same beneficial owner present in the wider portfolio?"
+    ]
+  }
+}

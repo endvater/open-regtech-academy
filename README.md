@@ -1,7 +1,7 @@
 <p align="center">
   <strong>Open RegTech Engineering Academy</strong><br>
   <em>Open-Source-Zertifizierungsplattform für RegTech Engineers</em><br>
-  <code>v0.1-beta · Module 1-6 angelegt, M2 priorisiert, M3 live</code>
+  <code>v0.1-beta · Module 1-6 angelegt, M2 und M4 priorisiert, M3 live</code>
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@ Die **Open RegTech Engineering Academy** ist eine community-getriebene, KI-gest�
 | **Modul 1: EU-Regulatorik Skeleton** | 🧪 Preview | Lernziele, Lektionen und Reading Path |
 | **Modul 2: Data Architecture & RegTech Stack** | 🧪 Priority Preview | 8 Lektionen, 4 Uebungen und 1 Architektur-Lab |
 | **Modul 3: Compliance-as-Code** | ✅ Verfügbar | 4 Lektionen, 4 Uebungen, Musterloesung |
-| **Modul 4: Fincrime 360 Foundations** | 🧪 Preview | Payment-Rails-Lektion + erstes Parsing-Lab |
+| **Modul 4: Fincrime 360** | 🧪 Expanded Preview | 8 Lektionen, 4 Uebungen, Referenzfall und Payment-Lab |
 | **Modul 5: AI Governance, Privacy & OSINT** | 🧪 Guided Skeleton | 5 Lektionen und 2 Uebungen fuer Governance-Deep-Dives |
 | **Modul 6: Cybersecurity, Reporting & Capstone** | 🧪 Guided Skeleton | 4 Lektionen und 2 Uebungen fuer Reporting und Abschluss |
 | **DSGVO-Policy (Art. 32)** | ✅ Verfügbar | OPA/Rego Policy + 8 Tests |
@@ -57,7 +57,7 @@ Das Zielprogramm umfasst 22 Wochen (berufsbegleitend, 8–12h/Woche):
 | M1 | Regulatorische Landschaft EU/DACH (DORA, MiCAR, AI Act, DSGVO) | 🧪 Skeleton |
 | M2 | Data Architecture & RegTech Stack | 🧪 Priority Preview |
 | **M3** | **Compliance-as-Code (OPA, Rego, Policy Testing)** | **✅ Verfügbar** |
-| M4 | Fincrime 360: KYC, AML, Fraud, Sanctions & Payment Rails | 🧪 Foundations |
+| M4 | Fincrime 360: KYC, AML, Fraud, Sanctions & Payment Rails | 🧪 Expanded Preview |
 | M5 | AI Governance, Audit, Privacy & Open-Source Intelligence | 🧪 Guided Skeleton |
 | M6 | Cybersecurity, Regulatory Reporting & Capstone | 🧪 Guided Skeleton |
 
@@ -172,14 +172,22 @@ Modul 3 ist die erste vollständige Lerneinheit und das Herzstück des MVP.
 
 ## Modul 4 Preview
 
-`Modul 4` befindet sich noch im Aufbau. Die ersten Foundations sind bereits als
-offener Preview im Repository angelegt:
+`Modul 4` ist jetzt als ausgebauter Preview-Strang im Repository angelegt. Der
+Modulrahmen verbindet Zahlungsverkehr, KYC, Alerts, Investigation, Netzwerke
+und Governance ueber einen gemeinsamen Referenzfall.
 
 ### Lernartefakte
 
 1. [Modul 4: Fincrime 360](curriculum/module-04-fincrime-360/README.md)
 2. [Lektion 1: Payment Rails for Compliance Engineers](curriculum/module-04-fincrime-360/lessons/01-payment-rails-for-compliance-engineers.md)
 3. [Lektion 2: Missing Perspectives & Deep Dives](curriculum/module-04-fincrime-360/lessons/02-missing-perspectives-and-deep-dives.md)
+4. [Lektion 3: Customer, UBO and Risk](curriculum/module-04-fincrime-360/lessons/03-customer-ubo-and-risk.md)
+5. [Lektion 4: Transactions, Alerts and Typologies](curriculum/module-04-fincrime-360/lessons/04-transactions-alerts-and-typologies.md)
+6. [Lektion 5: Investigations and Escalation](curriculum/module-04-fincrime-360/lessons/05-investigations-and-escalation.md)
+
+### Referenzfall
+
+- [Synthetic Fincrime 360 Reference Case](synthetic-data/fincrime-360/README.md)
 
 ### Lab
 
@@ -249,8 +257,9 @@ open-regtech-academy/
 │   │   ├── lessons/       (4 Lektionen)
 │   │   ├── exercises/     (4 Uebungen)
 │   │   └── solutions/     (Musterlösungen)
-│   ├── module-04-fincrime-360/        # 🧪 Foundations / Preview
-│   │   └── lessons/       (erste Lektionen)
+│   ├── module-04-fincrime-360/        # 🧪 Expanded Preview
+│   │   ├── lessons/       (8 Lektionen)
+│   │   └── exercises/     (4 Uebungen)
 │   ├── module-05-ai-governance-audit-privacy-osint/ # 🧪 Guided Skeleton
 │   └── module-06-cybersecurity-reporting-capstone/  # 🧪 Guided Skeleton
 ├── compliance-as-code/
@@ -264,6 +273,8 @@ open-regtech-academy/
 ├── ai-prompts/            # ✅ LLM System Prompts
 ├── scripts/               # ✅ Repo-Checks und Hilfsskripte
 ├── synthetic-data/        # 🔜 In Entwicklung
+│   ├── incident-generator/ # ✅ DORA-nahe Vorfallsdaten
+│   └── fincrime-360/       # 🧪 Referenzfall fuer M4
 └── .github/               # ✅ Issue Templates, PR-Template, CI/CD
 ```
 
