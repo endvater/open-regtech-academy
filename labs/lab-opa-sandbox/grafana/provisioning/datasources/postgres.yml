@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: Compliance Postgres
+    uid: compliance-postgres
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    user: regtech
+    secureJsonData:
+      password: lab-password-2026
+    jsonData:
+      database: regtech_lab
+      sslmode: disable
+      postgresVersion: 1600
+      timescaledb: false

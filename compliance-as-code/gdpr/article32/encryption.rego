@@ -13,6 +13,8 @@ package gdpr.article32.encryption
 
 import rego.v1
 
+default compliant := false
+
 # ============================================================
 # Konfiguration: Akzeptierte Algorithmen & Key-Rotation-Limit
 # ============================================================

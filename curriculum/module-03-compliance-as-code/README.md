@@ -54,16 +54,23 @@ Nach Abschluss dieses Moduls können Teilnehmende:
 1. [Übung 1: DSGVO Art. 32 – Verschlüsselungsprüfung](exercises/01-gdpr-encryption-check.md) (Beginner)
 2. [Übung 2: DORA – ICT-Incident-Klassifizierung](exercises/02-dora-incident-classification.md) (Intermediate)
 3. [Übung 3: End-to-End Compliance Pipeline](exercises/03-e2e-pipeline.md) (Advanced)
+4. [Übung 4: DSGVO Art. 25 – Privacy by Design & by Default](exercises/04-gdpr-privacy-by-design.md) (Intermediate)
 
 ## Lab-Umgebung
 
 ```bash
 cd ../../labs/lab-opa-sandbox
-docker-compose up -d
+docker compose up -d
 # → OPA Server auf localhost:8181
 # → Test-Datenbank auf localhost:5432
 # → Grafana Dashboard auf localhost:3000
 ```
+
+Beispiel-Inputs und Befehle:
+
+- [`../../labs/lab-opa-sandbox/MODULE_03_RUNBOOK.md`](../../labs/lab-opa-sandbox/MODULE_03_RUNBOOK.md)
+- [`../../labs/lab-opa-sandbox/examples/gdpr_article32_input.json`](../../labs/lab-opa-sandbox/examples/gdpr_article32_input.json)
+- [`../../labs/lab-opa-sandbox/examples/dora_article18_input.json`](../../labs/lab-opa-sandbox/examples/dora_article18_input.json)
 
 ## KI-Integration
 

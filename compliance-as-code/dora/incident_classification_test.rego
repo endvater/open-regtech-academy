@@ -17,7 +17,10 @@ test_minor_incident_no_notification if {
             "financial_impact_eur": 2000,
             "downtime_hours": 0.5,
             "data_records_compromised": 10,
-            "affected_services": ["monitoring"]
+            "affected_services": ["monitoring"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -33,7 +36,10 @@ test_major_many_affected_clients if {
             "financial_impact_eur": 1000,
             "downtime_hours": 0.5,
             "data_records_compromised": 0,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -49,7 +55,10 @@ test_major_critical_service if {
             "financial_impact_eur": 5000,
             "downtime_hours": 1,
             "data_records_compromised": 0,
-            "affected_services": ["payment-processing"]
+            "affected_services": ["payment-processing"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -65,7 +74,10 @@ test_major_financial_impact if {
             "financial_impact_eur": 500000,
             "downtime_hours": 1,
             "data_records_compromised": 0,
-            "affected_services": ["api-gateway"]
+            "affected_services": ["api-gateway"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -81,7 +93,10 @@ test_major_long_downtime if {
             "financial_impact_eur": 10000,
             "downtime_hours": 8,
             "data_records_compromised": 0,
-            "affected_services": ["email"]
+            "affected_services": ["email"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -97,7 +112,10 @@ test_major_data_breach if {
             "financial_impact_eur": 5000,
             "downtime_hours": 0,
             "data_records_compromised": 10000,
-            "affected_services": ["backup-system"]
+            "affected_services": ["backup-system"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -113,7 +131,10 @@ test_notification_required_for_major if {
             "financial_impact_eur": 250000,
             "downtime_hours": 6,
             "data_records_compromised": 0,
-            "affected_services": ["core-banking"]
+            "affected_services": ["core-banking"],
+            "affected_countries": ["DE", "AT"],
+            "cascading_to_other_institutions": true,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -129,7 +150,10 @@ test_deadlines_for_major_incident if {
             "financial_impact_eur": 0,
             "downtime_hours": 0,
             "data_records_compromised": 0,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
     incident_classification.followup_deadline_hours == 72 with input as {
@@ -139,7 +163,10 @@ test_deadlines_for_major_incident if {
             "financial_impact_eur": 0,
             "downtime_hours": 0,
             "data_records_compromised": 0,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
     incident_classification.final_report_deadline_days == 30 with input as {
@@ -149,7 +176,10 @@ test_deadlines_for_major_incident if {
             "financial_impact_eur": 0,
             "downtime_hours": 0,
             "data_records_compromised": 0,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "cascading_to_other_institutions": false,
+            "affected_countries": ["DE"],
+            "jurisdiction": "DE"
         }
     }
 }
@@ -165,13 +195,18 @@ test_multiple_triggers if {
             "financial_impact_eur": 200000,
             "downtime_hours": 6,
             "data_records_compromised": 0,
-            "affected_services": ["core-banking"]
+            "affected_services": ["core-banking"],
+            "affected_countries": ["DE", "AT", "FR", "NL"],
+            "cascading_to_other_institutions": true,
+            "jurisdiction": "DE"
         }
     }
     "affected_clients" in triggers
     "financial_impact" in triggers
     "downtime" in triggers
     "critical_service" in triggers
+    "geographical_extent" in triggers
+    "cascading_effect" in triggers
 }
 
 # ============================================================
@@ -185,7 +220,10 @@ test_boundary_exactly_at_threshold if {
             "financial_impact_eur": 0,
             "downtime_hours": 0,
             "data_records_compromised": 0,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
 }
@@ -198,7 +236,63 @@ test_boundary_just_below_threshold if {
             "financial_impact_eur": 99999,
             "downtime_hours": 3.9,
             "data_records_compromised": 4999,
-            "affected_services": ["website"]
+            "affected_services": ["website"],
+            "affected_countries": ["DE", "AT", "FR"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
         }
     }
+}
+
+test_geographical_extent_trigger if {
+    incident_classification.major_incident with input as {
+        "incident": {
+            "id": "INC-TEST-012",
+            "affected_clients": 100,
+            "financial_impact_eur": 5000,
+            "downtime_hours": 0.5,
+            "data_records_compromised": 0,
+            "affected_services": ["website"],
+            "affected_countries": ["DE", "AT", "NL", "FR"],
+            "cascading_to_other_institutions": false,
+            "jurisdiction": "DE"
+        }
+    }
+}
+
+test_cascading_trigger if {
+    incident_classification.major_incident with input as {
+        "incident": {
+            "id": "INC-TEST-013",
+            "affected_clients": 100,
+            "financial_impact_eur": 1000,
+            "downtime_hours": 0.25,
+            "data_records_compromised": 0,
+            "affected_services": ["website"],
+            "affected_countries": ["DE"],
+            "cascading_to_other_institutions": true,
+            "jurisdiction": "DE"
+        }
+    }
+}
+
+test_decision_matrix_and_explanation if {
+    c := incident_classification.classification with input as {
+        "incident": {
+            "id": "INC-TEST-014",
+            "affected_clients": 10000,
+            "financial_impact_eur": 100000,
+            "downtime_hours": 4,
+            "data_records_compromised": 5000,
+            "affected_services": ["payment-processing"],
+            "affected_countries": ["DE", "AT", "NL", "FR"],
+            "cascading_to_other_institutions": true,
+            "jurisdiction": "DE"
+        }
+    }
+    c.is_major == true
+    c.notification.nca == "BaFin"
+    c.severity_score > 0
+    count(c.decision_matrix) == 7
+    contains(c.explanation, "major")
 }

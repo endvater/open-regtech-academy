@@ -10,6 +10,11 @@ Dieses Verzeichnis wird Python-basierte Generatoren für synthetische Testdaten 
 - **Identity Generator**: Fiktive KYC-Profile mit verschiedenen Risikostufen
 - **Incident Generator**: ICT-Incidents mit verschiedenen Schweregrad-Kombinationen
 
+## Verfuegbar
+
+- [`incident-generator/`](incident-generator/) - CLI-Generator fuer synthetische
+  DORA-nahe ICT-Incidents mit `minor` und `major` Faellen
+
 ## Beitragen
 
 Wir suchen Contributors! Wenn du einen Datengenerator beisteuern möchtest, siehe [CONTRIBUTING.md](../CONTRIBUTING.md).

@@ -1,0 +1,33 @@
+{
+  "resources": [
+    {
+      "name": "customer-master-db",
+      "type": "database",
+      "contains_personal_data": true,
+      "encryption": {
+        "enabled": true,
+        "algorithm": "AES-256-GCM",
+        "key_rotation_date": "2026-02-15"
+      }
+    },
+    {
+      "name": "analytics-datalake",
+      "type": "storage",
+      "contains_personal_data": true,
+      "encryption": {
+        "enabled": false
+      }
+    },
+    {
+      "name": "legacy-crm-backup",
+      "type": "storage",
+      "contains_personal_data": true,
+      "encryption": {
+        "enabled": true,
+        "algorithm": "RC4",
+        "key_rotation_date": "2023-11-15"
+      }
+    }
+  ],
+  "current_date": "2026-04-14"
+}

@@ -20,6 +20,8 @@ Gesetzestext → Entscheidungsbaum → Rego-Policy → Tests
 - Quellenangabe zum Gesetzesartikel als Kommentar im Code
 - Mindestens 3 Unit Tests pro Policy
 - Klare Beschreibung, welche Anforderung abgedeckt wird
+- Traceability-Dokument gemäss
+  `compliance-as-code/templates/policy-traceability-template.md`
 - Peer-Review durch mindestens 1 Person mit regulatorischem UND 1 Person mit technischem Hintergrund
 
 ### 2. Curriculum Content (curriculum/)
@@ -40,6 +42,7 @@ Gesetzestext → Entscheidungsbaum → Rego-Policy → Tests
 - System Prompts für Compliance-LLM-Assistenten
 - Getestet mit mindestens 2 verschiedenen LLMs
 - Inklusive Beispiel-Interaktionen
+- Eval-Dokumentation mit Bewertungsrubrik und Failure Cases
 
 ### 5. Synthetic Data (synthetic-data/)
 
@@ -57,7 +60,7 @@ Gesetzestext → Entscheidungsbaum → Rego-Policy → Tests
 4. **Code schreiben**: Befolge die Style Guides (siehe unten)
 5. **Tests schreiben**: Alle neuen Policies brauchen Tests
 6. **PR erstellen**: Nutze das PR-Template
-7. **Review**: Mindestens 1 Approval erforderlich
+7. **Review**: Mindestens 1 Approval erforderlich, inklusive Quellen- und Traceability-Check
 8. **Merge**: Maintainer mergen nach Approval
 
 ### Für Community-Contributors
@@ -86,6 +89,26 @@ deny contains msg if {
     msg := sprintf("Ressource '%s' enthält personenbezogene Daten ohne Verschlüsselung (Art. 32 DSGVO)", [resource.name])
 }
 ```
+
+### Policy-Traceability
+
+Jede neue Regulatory-Logic-Beitragsserie sollte zusaetzlich ein kurzes
+Traceability-Dokument enthalten:
+
+- **Quelle und Normtext**
+- **Interpretationsannahmen**
+- **Datenmodell**
+- **Entscheidungslogik**
+- **Teststrategie**
+- **Offene Grenzen des Lehrbeispiels**
+
+Template:
+
+- [`compliance-as-code/templates/policy-traceability-template.md`](compliance-as-code/templates/policy-traceability-template.md)
+
+Beispiel:
+
+- [`compliance-as-code/gdpr/article32/TRACEABILITY.md`](compliance-as-code/gdpr/article32/TRACEABILITY.md)
 
 ### Python
 

@@ -1,0 +1,22 @@
+{
+  "incident": {
+    "id": "INC-2026-RUNBOOK-001",
+    "description": "Payment processing outage with cross-border impact",
+    "affected_clients": 18500,
+    "financial_impact_eur": 220000,
+    "downtime_hours": 5.5,
+    "data_records_compromised": 0,
+    "affected_services": [
+      "payment-processing",
+      "client-authentication"
+    ],
+    "affected_countries": [
+      "DE",
+      "AT",
+      "NL",
+      "FR"
+    ],
+    "cascading_to_other_institutions": true,
+    "jurisdiction": "DE"
+  }
+}
