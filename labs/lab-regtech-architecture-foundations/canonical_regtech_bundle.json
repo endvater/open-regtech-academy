@@ -1,0 +1,89 @@
+{
+  "parties": [
+    {
+      "party_id": "pty_customer_001",
+      "party_type": "organization",
+      "name": "Atlas Trading GmbH",
+      "country": "DE",
+      "source_refs": [
+        {
+          "system": "crm",
+          "source_id": "crm-8821"
+        }
+      ]
+    },
+    {
+      "party_id": "pty_counterparty_001",
+      "party_type": "organization",
+      "name": "Blue Harbour Consulting Ltd",
+      "country": "CY",
+      "source_refs": [
+        {
+          "system": "payment_hub",
+          "source_id": "beneficiary-441"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "account_id": "acc_001",
+      "party_id": "pty_customer_001",
+      "iban": "DE44500105175407324931",
+      "currency": "EUR"
+    },
+    {
+      "account_id": "acc_002",
+      "party_id": "pty_counterparty_001",
+      "iban": "CY17002001280000001200527600",
+      "currency": "EUR"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "payevt_20260414_0001",
+      "event_type": "payment_initiated",
+      "rail": "SEPA_SCT",
+      "message_type": "pacs.008",
+      "timestamp": "2026-04-14T09:41:00Z",
+      "debtor_party_id": "pty_customer_001",
+      "creditor_party_id": "pty_counterparty_001",
+      "debtor_account_id": "acc_001",
+      "creditor_account_id": "acc_002",
+      "amount": {
+        "currency": "EUR",
+        "value": 9850.0
+      },
+      "correlation_id": "uetr-123e4567-e89b-12d3-a456-426614174000"
+    },
+    {
+      "event_id": "ruleexec_20260414_0001",
+      "event_type": "rule_executed",
+      "timestamp": "2026-04-14T09:41:01Z",
+      "rule_id": "tm_high_risk_corridor",
+      "rule_version": "2026-04-01",
+      "input_event_id": "payevt_20260414_0001",
+      "decision": "alert"
+    }
+  ],
+  "alerts": [
+    {
+      "alert_id": "alt_0001",
+      "source_event_id": "payevt_20260414_0001",
+      "rule_execution_event_id": "ruleexec_20260414_0001",
+      "severity": "medium",
+      "status": "open"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "case_0001",
+      "alert_ids": [
+        "alt_0001"
+      ],
+      "status": "triage",
+      "opened_at": "2026-04-14T09:45:00Z",
+      "owner_role": "analyst"
+    }
+  ]
+}

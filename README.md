@@ -1,11 +1,11 @@
 <p align="center">
   <strong>Open RegTech Engineering Academy</strong><br>
   <em>Open-Source-Zertifizierungsplattform für RegTech Engineers</em><br>
-  <code>v0.1-beta · Modul 3 live, Modul 4 Foundations in Arbeit</code>
+  <code>v0.1-beta · Module 1-6 angelegt, M2 priorisiert, M3 live</code>
 </p>
 
 <p align="center">
-  <a href="#about">About</a> · <a href="#status">Status</a> · <a href="#onboarding-preview">Onboarding</a> · <a href="#modul-1-preview">Modul 1</a> · <a href="#module-3">Modul 3</a> · <a href="#modul-4-preview">Modul 4</a> · <a href="#getting-started">Getting Started</a> · <a href="#contributing">Contributing</a> · <a href="#roadmap">Roadmap</a>
+  <a href="#about">About</a> · <a href="#status">Status</a> · <a href="#onboarding-preview">Onboarding</a> · <a href="#modul-1-preview">Modul 1</a> · <a href="#modul-2-preview">Modul 2</a> · <a href="#module-3">Modul 3</a> · <a href="#modul-4-preview">Modul 4</a> · <a href="#module-5-preview">Modul 5</a> · <a href="#module-6-preview">Modul 6</a> · <a href="#getting-started">Getting Started</a> · <a href="#contributing">Contributing</a> · <a href="#roadmap">Roadmap</a>
 </p>
 
 ---
@@ -24,7 +24,10 @@ Die **Open RegTech Engineering Academy** ist eine community-getriebene, KI-gest�
 
 ## Status
 
-> **Dieses Repository ist ein MVP (v0.1-beta).** Aktuell ist Modul 3 (Compliance-as-Code) als vollständige Lerneinheit verfügbar. Die weiteren Module befinden sich in Planung. Siehe [Roadmap](#roadmap).
+> **Dieses Repository ist ein MVP (v0.1-beta).** Aktuell ist Modul 3
+> (Compliance-as-Code) als vollstaendige Lerneinheit verfuegbar. Die weiteren
+> Module liegen als Preview-, Foundation- oder Skeleton-Artefakte vor. Siehe
+> [Roadmap](#roadmap).
 
 ### Was ist verfügbar
 
@@ -32,16 +35,17 @@ Die **Open RegTech Engineering Academy** ist eine community-getriebene, KI-gest�
 |---------|--------|--------|
 | **Dual-Track Onboarding** | 🧪 Preview | Zwei Einstiegspfade fuer Compliance- und Tech-Lernende |
 | **Modul 1: EU-Regulatorik Skeleton** | 🧪 Preview | Lernziele, Lektionen und Reading Path |
+| **Modul 2: Data Architecture & RegTech Stack** | 🧪 Priority Preview | 8 Lektionen, 4 Uebungen und 1 Architektur-Lab |
 | **Modul 3: Compliance-as-Code** | ✅ Verfügbar | 4 Lektionen, 4 Uebungen, Musterloesung |
 | **Modul 4: Fincrime 360 Foundations** | 🧪 Preview | Payment-Rails-Lektion + erstes Parsing-Lab |
+| **Modul 5: AI Governance, Privacy & OSINT** | 🧪 Guided Skeleton | 5 Lektionen und 2 Uebungen fuer Governance-Deep-Dives |
+| **Modul 6: Cybersecurity, Reporting & Capstone** | 🧪 Guided Skeleton | 4 Lektionen und 2 Uebungen fuer Reporting und Abschluss |
 | **DSGVO-Policy (Art. 32)** | ✅ Verfügbar | OPA/Rego Policy + 8 Tests |
 | **DSGVO-Policy (Art. 25)** | ✅ Verfügbar | Privacy-by-Design Lehrbeispiel + Tests |
 | **DORA-Policy (Art. 18)** | ✅ Verfügbar | Incident-Klassifizierung (Lehrbeispiel) |
 | **Lab-Umgebung** | ✅ Verfügbar | Docker-Compose (OPA + PostgreSQL + Grafana) |
 | **KI-Tutor-Prompts** | ✅ Verfügbar | System Prompts für Modul 3 |
 | **CI/CD Workflow** | ✅ Verfügbar | Auto-Grading via GitHub Actions |
-| Module 1–2, 4–6 | 🔜 Geplant | Siehe Roadmap |
-| Dual-Track Onboarding | 🔜 Geplant | Compliance→Tech / Tech→Compliance |
 
 ## Geplantes Curriculum (Vollausbau)
 
@@ -51,11 +55,11 @@ Das Zielprogramm umfasst 22 Wochen (berufsbegleitend, 8–12h/Woche):
 |-------|-------|--------|
 | Onboarding | Dual-Track (Compliance→Tech / Tech→Compliance) | 🧪 Preview |
 | M1 | Regulatorische Landschaft EU/DACH (DORA, MiCAR, AI Act, DSGVO) | 🧪 Skeleton |
-| M2 | Data Architecture & RegTech Stack | 🔜 Geplant |
+| M2 | Data Architecture & RegTech Stack | 🧪 Priority Preview |
 | **M3** | **Compliance-as-Code (OPA, Rego, Policy Testing)** | **✅ Verfügbar** |
 | M4 | Fincrime 360: KYC, AML, Fraud, Sanctions & Payment Rails | 🧪 Foundations |
-| M5 | AI Governance, Audit, Privacy & Open-Source Intelligence | 🔜 Geplant |
-| M6 | Cybersecurity, Regulatory Reporting & Capstone | 🔜 Geplant |
+| M5 | AI Governance, Audit, Privacy & Open-Source Intelligence | 🧪 Guided Skeleton |
+| M6 | Cybersecurity, Regulatory Reporting & Capstone | 🧪 Guided Skeleton |
 
 ## Onboarding Preview
 
@@ -81,6 +85,15 @@ Lektionstitel und eine erste Einordnung von `DORA`, `MiCAR`, `AI Act` und
 `DSGVO`.
 
 - [Modul 1: EU Regulatory Landscape](curriculum/module-01-eu-regulatory-landscape/README.md)
+
+## Modul 2 Preview
+
+`Modul 2` ist das priorisierte Brueckenmodul fuer die naechste Ausbaustufe.
+Es verbindet regulatorisches Denken mit Datenmodellen, Integrationsmustern,
+Event-Flows, Domain Boundaries und Zielarchitekturen.
+
+- [Modul 2: Data Architecture & RegTech Stack](curriculum/module-02-data-architecture-regtech-stack/README.md)
+- [Lab: RegTech Architecture Foundations](labs/lab-regtech-architecture-foundations/README.md)
 
 ## Fincrime 360 als Curriculum-Linse
 
@@ -149,6 +162,7 @@ Modul 3 ist die erste vollständige Lerneinheit und das Herzstück des MVP.
 1. [DSGVO Art. 32 – Verschlüsselungsprüfung](curriculum/module-03-compliance-as-code/exercises/01-gdpr-encryption-check.md) (Beginner)
 2. [DORA Art. 18 – ICT-Incident-Klassifizierung](curriculum/module-03-compliance-as-code/exercises/02-dora-incident-classification.md) (Intermediate)
 3. [End-to-End Compliance Pipeline](curriculum/module-03-compliance-as-code/exercises/03-e2e-pipeline.md) (Advanced)
+4. [DSGVO Art. 25 – Privacy by Design & by Default](curriculum/module-03-compliance-as-code/exercises/04-gdpr-privacy-by-design.md) (Intermediate)
 
 ### Compliance-as-Code Library
 
@@ -170,6 +184,20 @@ offener Preview im Repository angelegt:
 ### Lab
 
 - [`labs/lab-fincrime360-sandbox/`](labs/lab-fincrime360-sandbox/) – Parsing einer vereinfachten `pacs.008` in ein kanonisches Payment-Event
+
+## Module 5 Preview
+
+`Modul 5` buendelt die Governance- und Deep-Dive-Themen der Academy:
+`AI Governance`, `Model Risk`, `Privacy`, `OSINT` und `Auditierbarkeit`.
+
+- [Modul 5: AI Governance, Audit, Privacy & OSINT](curriculum/module-05-ai-governance-audit-privacy-osint/README.md)
+
+## Module 6 Preview
+
+`Modul 6` bildet den Abschluss mit `Cybersecurity`, `Regulatory Reporting`
+und einem integrativen `Capstone`.
+
+- [Modul 6: Cybersecurity, Regulatory Reporting & Capstone](curriculum/module-06-cybersecurity-reporting-capstone/README.md)
 
 ## Getting Started
 
@@ -216,18 +244,22 @@ open-regtech-academy/
 ├── curriculum/
 │   ├── onboarding-dual-track/           # 🧪 Preview
 │   ├── module-01-eu-regulatory-landscape/ # 🧪 Skeleton
+│   ├── module-02-data-architecture-regtech-stack/ # 🧪 Priority Preview
 │   ├── module-03-compliance-as-code/  # ✅ Verfügbar
 │   │   ├── lessons/       (4 Lektionen)
 │   │   ├── exercises/     (4 Uebungen)
 │   │   └── solutions/     (Musterlösungen)
-│   └── module-04-fincrime-360/        # 🧪 Foundations / Preview
-│       └── lessons/       (erste Lektionen)
+│   ├── module-04-fincrime-360/        # 🧪 Foundations / Preview
+│   │   └── lessons/       (erste Lektionen)
+│   ├── module-05-ai-governance-audit-privacy-osint/ # 🧪 Guided Skeleton
+│   └── module-06-cybersecurity-reporting-capstone/  # 🧪 Guided Skeleton
 ├── compliance-as-code/
 │   ├── gdpr/article32/    # ✅ Policy + Tests
 │   ├── gdpr/article25/    # ✅ Privacy by Design Beispiel
 │   └── dora/              # ✅ Incident-Klassifizierung
 ├── labs/
 │   ├── lab-opa-sandbox/         # ✅ Docker-Compose
+│   ├── lab-regtech-architecture-foundations/ # 🧪 Architektur-Lab
 │   └── lab-fincrime360-sandbox/ # 🧪 Payment Rails Parsing
 ├── ai-prompts/            # ✅ LLM System Prompts
 ├── scripts/               # ✅ Repo-Checks und Hilfsskripte
@@ -252,9 +284,9 @@ Besonders gesucht:
 | Phase | Zeitrahmen | Inhalt |
 |-------|-----------|--------|
 | **v0.1 (jetzt)** | — | Modul 3 komplett, Lab, CI/CD, DSGVO+DORA-Policies |
-| v0.2 | +2 Monate | Module 1 (Regulatorik) + 2 (Architektur), Dual-Track Onboarding, Payment-Rails-Basics |
-| v0.3 | +4 Monate | Modul 4 (Fincrime 360), Synthetic Incident Generator, erste Deep Dives zu Privacy/Web3/OSINT |
-| v1.0 | +6 Monate | Alle 6 Module, Zertifizierungspruefung, Regulatory Reporting, erste Kohorte |
+| v0.2 | +2 Monate | Module 1 und 2 als tragfaehige Foundations, Dual-Track Onboarding, Payment-Rails-Basics |
+| v0.3 | +4 Monate | Modul 4 Foundations, Synthetic Incident Generator, erste Deep Dives zu Privacy/Web3/OSINT |
+| v1.0 | +6 Monate | Module 1-6 im Ausbau, Zertifizierungspruefung, Regulatory Reporting, erste Kohorte |
 
 Langfristige Vision: Community Hub, Corporate Labs, Continuous Certification. Das vollständige Gesamtkonzept (Studienplan, Geschäftsmodell, Academy-Vision) wird separat gepflegt.
 
