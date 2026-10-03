@@ -15,8 +15,8 @@ docker compose up -d
 
 Danach:
 
-- `OPA`: http://localhost:8181
-- `Grafana`: http://localhost:3000
+- `OPA`: <http://localhost:8181>
+- `Grafana`: <http://localhost:3000>
   - User: `admin`
   - Password: `regtech2026`
 

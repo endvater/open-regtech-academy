@@ -38,6 +38,7 @@ Schreibe mindestens 5 Testfälle:
 ### Teil 3: Dokumentation
 
 Füge Code-Kommentare hinzu, die:
+
 - Den Bezug zu DSGVO Art. 32 Abs. 1 lit. a herstellen
 - Erklären, warum bestimmte Algorithmen akzeptiert/abgelehnt werden
 - Beschreiben, wie die Policy in der Praxis eingesetzt wird
@@ -99,6 +100,7 @@ opa eval -d compliance-as-code/gdpr/article32/ \
 ## KI-Hinweis
 
 Du kannst einen KI-Assistenten verwenden, um:
+
 - Den Gesetzestext in technische Anforderungen zu zerlegen
 - Rego-Syntax zu erklären und Fehler zu debuggen
 - Zusätzliche Edge Cases für Tests vorzuschlagen

@@ -4,7 +4,7 @@
 
 Die Musterlösung befindet sich in:
 
-```
+```text
 compliance-as-code/gdpr/article32/encryption.rego      # Policy
 compliance-as-code/gdpr/article32/encryption_test.rego  # Tests
 ```

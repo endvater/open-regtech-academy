@@ -4,7 +4,7 @@
 
 Open Policy Agent (OPA) ist eine Open-Source-Policy-Engine der Cloud Native Computing Foundation (CNCF). OPA entkoppelt Policy-Entscheidungen von der Anwendungslogik: deine Anwendung fragt OPA „Darf X passieren?", und OPA antwortet auf Basis deklarativer Regeln.
 
-```
+```text
 +-------------------+       +-----+       +------------+
 | Deine Anwendung   | ----> | OPA | ----> | Entscheidung |
 | "Darf User X auf  |       |     |       | allow: true  |
@@ -30,7 +30,7 @@ Rego (ausgesprochen „ray-go") ist eine deklarative Sprache, die speziell für 
 
 ### Grundkonzepte
 
-**1. Packages – Organisation von Policies**
+#### 1. Packages – Organisation von Policies
 
 ```rego
 package gdpr.article32.encryption
@@ -38,7 +38,7 @@ package gdpr.article32.encryption
 
 Packages organisieren Policies in einem Namensraum. Für RegTech empfehlen wir: `{regulierung}.{artikel}.{thema}`.
 
-**2. Rules – Die eigentlichen Regeln**
+#### 2. Rules – Die eigentlichen Regeln
 
 ```rego
 import rego.v1
@@ -56,7 +56,7 @@ allow if {
 }
 ```
 
-**3. deny-Pattern – Das Compliance-Muster**
+#### 3. deny-Pattern – Das Compliance-Muster
 
 Das wichtigste Pattern für Compliance-Policies: sammle alle Verstösse.
 
@@ -78,7 +78,7 @@ compliant if {
 }
 ```
 
-**4. Iteration – Über Daten iterieren**
+#### 4. Iteration – Über Daten iterieren
 
 ```rego
 # "some" iteriert über Elemente
@@ -90,7 +90,7 @@ deny contains msg if {
 }
 ```
 
-**5. Hilfsfunktionen**
+#### 5. Hilfsfunktionen
 
 ```rego
 # Wiederverwendbare Logik auslagern

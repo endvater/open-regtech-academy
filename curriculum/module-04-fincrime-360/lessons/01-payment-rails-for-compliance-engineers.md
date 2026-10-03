@@ -42,6 +42,7 @@ Bevor wir auf konkrete Rails schauen, muessen wir vier Ebenen auseinanderhalten:
 Das fachliche Regelwerk einer Zahlungsart.
 
 Beispiele:
+
 - `SEPA SCT`
 - `SEPA SCT Inst`
 - `SEPA SDD`
@@ -54,6 +55,7 @@ gelten. Es ist nicht automatisch die technische Infrastruktur.
 Die Nachricht, die zwischen Parteien oder Systemen ausgetauscht wird.
 
 Beispiele:
+
 - `MT103`
 - `pacs.008`
 - `pain.001`
@@ -67,6 +69,7 @@ Settlement.
 Die tatsaechliche Verrechnung des Geldes.
 
 Beispiele:
+
 - Settlement in Korrespondenzbankketten
 - Settlement in `T2`
 - Settlement in `TIPS`

@@ -5,13 +5,15 @@
 Compliance-as-Code (CaC) bedeutet, regulatorische Anforderungen als ausführbaren, testbaren und versionierbaren Code zu formulieren – statt als PDF-Checklisten, Excel-Tabellen oder Word-Dokumente.
 
 **Traditioneller Ansatz:**
-```
+
+```text
 Gesetzestext (PDF) → Compliance-Abteilung liest → Checkliste (Excel)
 → Manuelle Prüfung → Report (Word) → Audit (jährlich)
 ```
 
 **Compliance-as-Code:**
-```
+
+```text
 Gesetzestext → Formalisierung → Executable Policy (Code)
 → Automatisierte Prüfung → Kontinuierlicher Compliance-Status → Audit Trail
 ```
@@ -21,6 +23,7 @@ Gesetzestext → Formalisierung → Executable Policy (Code)
 ### Das Skalierungsproblem
 
 Allein im EU-Finanzsektor gelten gleichzeitig:
+
 - **DORA** (ICT-Risikomanagement, seit Jan 2025)
 - **MiCAR** (Krypto-Asset-Regulierung, ab Juli 2026)
 - **EU AI Act** (KI-Regulierung, ab Aug 2026)
@@ -53,7 +56,7 @@ OPA ist eine Open-Source-Policy-Engine, die von der Cloud Native Computing Found
 
 ### Warum OPA für RegTech?
 
-```
+```text
 +-------------------+     +-----------+     +------------------+
 | Compliance-Daten  | --> |    OPA    | --> | Entscheidung     |
 | (Transaktionen,   |     | (Rego-    |     | (allow/deny +    |
@@ -63,6 +66,7 @@ OPA ist eine Open-Source-Policy-Engine, die von der Cloud Native Computing Found
 ```
 
 OPA passt perfekt zu RegTech, weil:
+
 1. Policies als Code versionierbar und auditierbar sind
 2. Die Trennung von Daten und Logik regulatorisch sinnvoll ist
 3. Es bereits breite Adoption in der Cloud-Native-Welt hat
@@ -117,6 +121,7 @@ compliant if {
 ```
 
 **Ergebnis:**
+
 ```json
 {
   "deny": [
@@ -128,7 +133,7 @@ compliant if {
 
 ## Der Übersetzungsprozess (Vorschau auf Lektion 3)
 
-```
+```text
 1. Gesetzestext lesen & verstehen
    ↓
 2. Kernanforderung extrahieren (Was muss geprüft werden?)
@@ -148,13 +153,14 @@ compliant if {
 
 Du kannst einen LLM als Unterstützung nutzen, um den Übersetzungsprozess zu starten:
 
-```
+```text
 Prompt: "Analysiere DSGVO Artikel 32 und extrahiere die konkreten
 technischen Anforderungen, die automatisiert geprüft werden können.
 Formuliere jede Anforderung als If-Then-Regel."
 ```
 
 **Wichtig:** KI-Output ist ein Startpunkt, kein Endprodukt! Du musst:
+
 - Die juristische Korrektheit verifizieren
 - Edge Cases identifizieren
 - Tests schreiben, die auch Grenzfälle abdecken

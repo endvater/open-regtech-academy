@@ -11,6 +11,7 @@ Die Übersetzung von Gesetzestext in ausführbaren Code ist die zentrale Fähigk
 ### Schritt 1: Gesetzestext lesen & verstehen
 
 Lies den Artikel vollständig, inklusive:
+
 - Verweise auf andere Artikel (insbesondere Ausnahmen)
 - Erwägungsgründe (Recitals) – sie erklären die Intention
 - Delegierte Rechtsakte und RTS (technische Standards)
@@ -21,7 +22,7 @@ Lies den Artikel vollständig, inklusive:
 
 Formuliere die Anforderung als einfachen Satz:
 
-```
+```text
 DSGVO Art. 32: "Personenbezogene Daten müssen durch geeignete technische
 Massnahmen geschützt werden, insbesondere durch Verschlüsselung."
 ```
@@ -39,7 +40,7 @@ Unbestimmte Rechtsbegriffe müssen durch konkrete, prüfbare Kriterien ersetzt w
 | Industriestandards | BSI TR-02102-1 (Kryptografie), ISO 27001 |
 | Best Practice | NIST, ENISA-Empfehlungen |
 
-```
+```text
 "Geeignete Verschlüsselung" → Konkret:
 1. Algorithmus aus BSI TR-02102-1 (AES-256, ChaCha20-Poly1305, ...)
 2. Schlüssellänge ≥ 128 Bit
@@ -52,7 +53,7 @@ Unbestimmte Rechtsbegriffe müssen durch konkrete, prüfbare Kriterien ersetzt w
 
 Übersetze die Anforderung in eine visuelle Logik:
 
-```
+```text
 Ressource enthält personenbezogene Daten?
 ├── Nein → Keine Prüfung nötig (PASS)
 └── Ja → Verschlüsselung aktiviert?
@@ -130,7 +131,7 @@ test_empty_resources if {
 
 ### 1. „Zu wörtlich übersetzen"
 
-```
+```text
 ❌ Gesetz: "...treffen geeignete Massnahmen..."
 ❌ Code:  is_adequate(measures) if { measures.suitable == true }
           → Das verlagert nur das Problem!
@@ -150,7 +151,7 @@ Trenne verschiedene Anforderungen in separate Policies. Art. 32 (Verschlüsselun
 
 KI kann bei Schritten 1–4 signifikant helfen:
 
-```
+```text
 Prompt: "Ich arbeite an einer OPA-Policy für DORA Art. 17 Abs. 3
 (ICT-Risikomanagement-Rahmenwerk). Bitte:
 1. Extrahiere die konkreten, prüfbaren Anforderungen

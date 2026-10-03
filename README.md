@@ -247,7 +247,7 @@ cat ai-prompts/module-03-compliance-tutor.md
 
 ## Repository-Struktur
 
-```
+```text
 open-regtech-academy/
 ├── curriculum/
 │   ├── onboarding-dual-track/           # 🧪 Preview
@@ -283,6 +283,7 @@ open-regtech-academy/
 Wir freuen uns über Beiträge! Siehe [CONTRIBUTING.md](CONTRIBUTING.md) für Details.
 
 Besonders gesucht:
+
 - **OPA-Policies** für weitere DSGVO-Artikel, DORA-Anforderungen, EU AI Act
 - **Curriculum-Beiträge** für Module 1–2 und 4–6
 - **Lab-Verbesserungen** und neue Testdaten
