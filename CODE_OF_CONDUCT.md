@@ -23,7 +23,7 @@ Wir verpflichten uns, allen Teilnehmenden, Beitragenden und Community-Mitglieder
 
 ## Durchsetzung
 
-Verstösse können an conduct@open-regtech-academy.org gemeldet werden. Das Maintainer-Team prüft alle Meldungen vertraulich und ergreift angemessene Massnahmen.
+Verstösse können an <conduct@open-regtech-academy.org> gemeldet werden. Das Maintainer-Team prüft alle Meldungen vertraulich und ergreift angemessene Massnahmen.
 
 ## Geltungsbereich
 

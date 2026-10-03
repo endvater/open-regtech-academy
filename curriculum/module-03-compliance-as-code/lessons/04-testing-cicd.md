@@ -10,7 +10,7 @@ OPA hat ein eingebautes Test-Framework. Testdateien liegen im selben Verzeichnis
 
 ### Konventionen
 
-```
+```text
 compliance-as-code/gdpr/article32/
 ├── encryption.rego          # Die Policy
 ├── encryption_test.rego     # Die Tests
@@ -162,7 +162,7 @@ Für Academy-Submissions (Label `academy-submission`) läuft zusätzlich ein Gra
 
 In der Praxis werden OPA-Policies als Gate in Deployment-Pipelines eingesetzt:
 
-```
+```text
 Code Push → Build → Unit Tests → OPA Policy Check → Deploy
                                      ↓
                               Policy verletzt?
@@ -171,6 +171,7 @@ Code Push → Build → Unit Tests → OPA Policy Check → Deploy
 ```
 
 **Beispiel:** Bevor ein neuer Microservice deployed wird, prüft OPA:
+
 - Hat er Verschlüsselung für personenbezogene Daten? (DSGVO)
 - Ist er im CMDB als kritisch markiert? (DORA)
 - Ist das verwendete AI-Modell klassifiziert? (AI Act)

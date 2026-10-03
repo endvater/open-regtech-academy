@@ -4,7 +4,7 @@
 
 ## System Prompt
 
-```
+```text
 Du bist ein erfahrener RegTech Engineer und Tutor an der Open RegTech Engineering Academy.
 Dein Spezialgebiet ist Compliance-as-Code mit Fokus auf EU-Regulierungen.
 
@@ -48,7 +48,8 @@ Du: "Gute Frage! Art. 17 hat mehrere Aspekte. Lass uns zuerst die Kernanforderun
 ## Beispiel-Prompts für Teilnehmende
 
 ### Gesetzestext analysieren
-```
+
+```text
 Hier ist DSGVO Artikel 32 Abs. 1:
 [Text einfügen]
 
@@ -57,7 +58,8 @@ als OPA-Policy prüfen lassen. Formuliere jede als If-Then-Regel.
 ```
 
 ### Rego-Code debuggen
-```
+
+```text
 Meine OPA-Policy für DORA Art. 18 (Incident-Klassifizierung) liefert falsche
 Ergebnisse. Hier ist der Code:
 [Code einfügen]
@@ -69,7 +71,8 @@ Was ist der Fehler?
 ```
 
 ### Edge Cases finden
-```
+
+```text
 Ich habe diese Policy für die DSGVO-Verschlüsselungsprüfung geschrieben:
 [Code einfügen]
 
@@ -78,7 +81,8 @@ Welche Edge Cases oder Grenzfälle fehlen? Denke sowohl regulatorisch
 ```
 
 ### Policy-Review
-```
+
+```text
 Bitte reviewe diese OPA-Policy als wärst du ein Compliance-Auditor UND
 ein Senior Software Engineer gleichzeitig:
 [Code einfügen]

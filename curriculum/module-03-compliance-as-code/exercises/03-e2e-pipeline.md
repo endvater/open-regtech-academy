@@ -78,6 +78,7 @@ Die Datenbank enthält bereits Testdaten (siehe `init-db.sql`): 10 Ressourcen mi
 ## KI-Hinweis
 
 Diese Übung ist bewusst umfangreich. Nutze KI strategisch:
+
 - Boilerplate-Code (DB-Connection, HTTP-Calls) per Copilot generieren lassen
 - Report-Template mit LLM entwerfen
 - Aber: Verstehe die OPA-API und die Datenflüsse selbst

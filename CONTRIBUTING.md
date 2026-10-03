@@ -12,11 +12,12 @@ Bitte lies unseren [Code of Conduct](CODE_OF_CONDUCT.md) bevor du beiträgst. Wi
 
 Übersetze regulatorische Anforderungen in maschinenlesbaren Code:
 
-```
+```text
 Gesetzestext → Entscheidungsbaum → Rego-Policy → Tests
 ```
 
 **Anforderungen:**
+
 - Quellenangabe zum Gesetzesartikel als Kommentar im Code
 - Mindestens 3 Unit Tests pro Policy
 - Klare Beschreibung, welche Anforderung abgedeckt wird
@@ -120,7 +121,7 @@ Beispiel:
 ### Markdown (Curriculum)
 
 - Überschriften: H1 für Modultitel, H2 für Lektionen, H3 für Abschnitte
-- Code-Blöcke mit Sprachkennung (```python, ```rego)
+- Code-Blöcke mit Sprachkennung (z. B. `python` oder `rego` hinter den drei Backticks)
 - Regulatorische Verweise immer mit Artikel-Nummer und Quelle
 
 ## Labels

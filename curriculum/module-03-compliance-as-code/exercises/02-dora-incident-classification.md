@@ -20,7 +20,7 @@ Deine Aufgabe: Baue eine OPA-Policy, die ICT-Incidents automatisch klassifiziert
 > d) Datenverluste
 > e) Kritikalität der betroffenen Dienste
 > f) Wirtschaftliche Auswirkungen
-
+>
 > **DORA Artikel 19 – Meldung schwerwiegender Vorfälle**
 >
 > Erstmeldung: 4 Stunden nach Klassifizierung als schwerwiegend
@@ -40,6 +40,7 @@ Erweitere die bestehende DORA-Policy (`compliance-as-code/dora/incident_classifi
 ### Teil 2: Meldepflicht-Engine
 
 Baue eine Policy, die automatisch bestimmt:
+
 - An welche nationale zuständige Behörde (NCA) gemeldet werden muss. DORA gilt als EU-Verordnung direkt in allen Mitgliedstaaten; die Meldung geht an die jeweilige NCA (z.B. BaFin in DE, FMA in AT). **Achtung:** Die FINMA (CH) fällt nicht unter DORA – die Schweiz ist kein EU-Mitgliedstaat. Modelliere dies korrekt im Code.
 - Welche Fristen gelten (Erstmeldung, Folgemeldung, Abschlussbericht) gemäss Art. 19 DORA und Durchführungsverordnung (EU) 2024/1774
 - Welche Pflichtfelder die Meldung enthalten muss (gemäss Meldeformular der ESAs)
@@ -47,6 +48,7 @@ Baue eine Policy, die automatisch bestimmt:
 ### Teil 3: Tests
 
 Mindestens 6 Testfälle:
+
 - ✅ Minor Incident (kein Kriterium überschritten)
 - ❌ Major: Viele betroffene Kunden
 - ❌ Major: Kritischer Dienst betroffen
@@ -76,12 +78,14 @@ Mindestens 6 Testfälle:
 ## KI-Hinweis
 
 Nutze den KI-Tutor, um:
+
 - Die DORA-Meldepflichten im Detail zu verstehen
 - Ein geeignetes Scoring-Modell zu entwerfen
 - Edge Cases für deine Tests zu generieren
 
 Prompt-Vorschlag:
-```
+
+```text
 Ich implementiere eine DORA Art. 18 Incident-Klassifizierung als OPA-Policy.
 Wie würdest du die Kriterien (Kunden, Finanzen, Downtime, Daten, Kritikalität)
 zu einem Severity-Score (0-100) gewichten? Berücksichtige die RTS-Vorgaben.
